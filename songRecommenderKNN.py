@@ -6,6 +6,7 @@ from time import sleep
 import pickle
 from joblib import Parallel, delayed, dump, load
 
+''''
 # from dotenv import load_dotenv
 #########################################################
 # Load and clean Spotify one million songs dataset
@@ -25,7 +26,7 @@ df_features = df_cleaned[
     'energy']].copy()
 
 ##########################################################
-
+'''
 
 def knn_recommendation_pickle(k=5, n_jobs=-1):
     """ Create KNN model and save model with Joblib locally"""
