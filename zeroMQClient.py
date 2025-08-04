@@ -18,15 +18,15 @@ request_payload = {
     "genre": "rock"
 }
 
-
 '''
+
 request_payload = {
     "type": "recommend_by_artist",
     "artist": "kylie minogue"
 }
 
-'''
-'''
+
+
 request_payload = {
     "type": "recommend_by_track",
     "track": "Crimewave"

@@ -1,6 +1,4 @@
 .env
-spotify_one_million_song_subset.csv
-spotify_one_million_song_dataset.csv
 songDataExploration.py
 songRecommenderSoftSet.py
 songsData_dump.sql
