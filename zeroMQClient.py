@@ -12,13 +12,13 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
 
-'''
+
 request_payload = {
     "type": "recommend_by_genre",
     "genre": "rock"
 }
 
-'''
+
 '''
 request_payload = {
     "type": "recommend_by_artist",
@@ -26,11 +26,12 @@ request_payload = {
 }
 
 '''
+'''
 request_payload = {
     "type": "recommend_by_track",
     "track": "Crimewave"
 }
-
+'''
 
 socket.send_json(request_payload)
 
