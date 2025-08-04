@@ -1,6 +1,9 @@
+.env
+spotify_one_million_song_subset.csv
+spotify_one_million_song_dataset.csv
 songDataExploration.py
 songRecommenderSoftSet.py
-songsData.db
+songsData_dump.sql
 WorldTopSong.csv
 knn_artist_recommendation_model
 parallelKNN.py
