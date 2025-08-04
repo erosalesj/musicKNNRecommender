@@ -1,3 +1,6 @@
+songDataExploration.py
 songRecommenderSoftSet.py
 spotify_one_million_song_dataset.csv
 WorldTopSong.csv
+knn_artist_recommendation_model
+parallelKNN.py
