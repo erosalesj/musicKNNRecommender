@@ -7,15 +7,9 @@ import json
 import songRecommenderKNN
 import genreQuery
 
-
-
-
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
-
-
-
 
 while True:
     received_data = socket.recv_json()
@@ -25,44 +19,33 @@ while True:
         artist = received_data["artist"]
         print(f"Artist of interest is {artist}")
         # Process recommendation
-        recommendations = songRecommenderKNN.knn_artist_recommendation(artist)
+        # recommendations = songRecommenderKNN.knn_artist_recommendation(artist)
+        recommendations = songRecommenderKNN.knn_artist_recommendation_from_model(artist)
     elif received_data["type"] == "recommend_by_track":
         track = received_data["track"]
         print(f"Track of interest is {track}")
         # Process recommendation
-        recommendations = songRecommenderKNN.knn_track_recommendation(track)
+        # recommendations = songRecommenderKNN.knn_track_recommendation(track)
+        recommendations = songRecommenderKNN.knn_track_recommendation_from_model(track)
     elif received_data["type"] == "recommend_by_genre":
         genre = received_data["genre"]
         print(f"Genre of interest is {genre}")
         # Process recommendation
         connection = genreQuery.createConnection()
-        #cursor = genreQuery.createCursor()
+        # cursor = genreQuery.createCursor()
         genreQuery.returnByGenre(connection, genre)
-        
         rows = genreQuery.returnByGenre(connection, genre)
-        
-        recommendations = genreQuery.formartDict(connection, rows) 
-    
-        
-    #print(f"The recommendations are {recommendations}")
+        recommendations = genreQuery.formartDict(connection, rows)
+        genreQuery.closeConnection(connection)
+    # print(f"The recommendations are {recommendations}")
     # recommendations_json = json.dumps(recommendations)
     socket.send_json(recommendations)
 
 context.destroy()
 
 """
-Song Genres:
-acoustic
-afrobeat
-alt-rock
-ambient
-black-metal
-blues
-breakbeat
-cantopop
-chicago-house
-chill
-sqlite> select distinct genre from songs;
+Available Song Genres:
+
 acoustic
 afrobeat
 alt-rock
