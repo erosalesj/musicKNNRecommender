@@ -14,16 +14,18 @@ socket.connect("tcp://localhost:5555")
 #data = {"artist": "kylie Minogue"}
 #data = {"artist": "daft punk"}
 
-'''
+
 request_payload = {
     "type": "recommend_by_genre",
     "genre": "rock"
 }
+
 '''
 request_payload = {
     "type": "recommend_by_artist",
     "artist": "kylie minogue"
 }
+'''
 '''
 request_payload = {
     "type": "recommend_by_track",
