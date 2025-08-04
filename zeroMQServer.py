@@ -15,17 +15,19 @@ while True:
     received_data = socket.recv_json()
     print(f"Received request: {received_data}")
 
-    # parse artist
-    artist = received_data["artist"]
-    print(f"Artist of interest is {artist}")
-
-    # Process recommendatio
-    recommendations = songRecommenderKNN.knn_artist_recommendation(artist)
-    print(f"The recommended artist are {recommendations}")
-
-    # Do some work
-    # time.sleep(1)
-    recommendations_json = json.dumps(recommendations)
+    if received_data["type"] == "recommend_by_artist":
+        artist = received_data["artist"]
+        print(f"Artist of interest is {artist}")
+        # Process recommendation
+        recommendations = songRecommenderKNN.knn_artist_recommendation(artist)
+    elif received_data["type"] == "recommend_by_track":
+        track = received_data["track"]
+        print(f"Track of interest is {track}")
+        # Process recommendation
+        recommendations = songRecommenderKNN.knn_track_recommendation(track)
+        
+    #print(f"The recommendations are {recommendations}")
+    # recommendations_json = json.dumps(recommendations)
     socket.send_json(recommendations)
 
 context.destroy()

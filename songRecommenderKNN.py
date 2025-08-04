@@ -83,8 +83,6 @@ def knn_artist_recommendation_from_model(artist_name, model_path="knn_artist_rec
 def knn_artist_recommendation(artist_name, k=5, n_jobs=-1):
     tfidf = TfidfVectorizer(stop_words='english')
     tfidf_matrix = tfidf.fit_transform(df_features['genre'])
-    print(tfidf_matrix.dtype)
-    print(tfidf_matrix)
     knn = NearestNeighbors(n_neighbors=k+1, metric='cosine', n_jobs=n_jobs) # Use n_jobs parameter for parallelization
     knn.fit(tfidf_matrix)
 
@@ -164,4 +162,4 @@ def knn_track_recommendation(track_name, k=5, n_jobs=-1):
 
     return all_recommendations
 
-print(knn_track_recommendation("Crimewave"))
+#print(knn_track_recommendation("Crimewave"))

@@ -12,8 +12,26 @@ socket = context.socket(zmq.REQ)
 socket.connect("tcp://localhost:5555")
 
 #data = {"artist": "kylie Minogue"}
-data = {"artist": "daft punk"}
-socket.send_json(data)
+#data = {"artist": "daft punk"}
+
+'''
+request_payload = {
+    "type": "recommend_by_genre",
+    "genre": "rock"
+}
+'''
+request_payload = {
+    "type": "recommend_by_artist",
+    "artist": "kylie minogue"
+}
+'''
+request_payload = {
+    "type": "recommend_by_track",
+    "track": "Crimewave"
+}
+'''
+
+socket.send_json(request_payload)
 
 message = socket.recv()
 print(f"Received reply {message}")
