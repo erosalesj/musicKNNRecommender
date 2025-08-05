@@ -125,12 +125,12 @@ participant C as Client
 participant M as MicroseService
 participant K as KNNRecommender
 participant S as SQLite Database
-C->>M: Client Request Song Recommendations via JSON payload
-M->>K: If request for types "recommended_by_artist" OR "recommended_by_track", it calls KNN Recommender
-K->>M: KNN Recommender replies with list of 5 songs in dictionary format
-M->>S: If request for types "recommended_by_genre", it calls on SQLite Database with a SQL query to return the top songs in a music genre
-S->>M: Database returns a list of 5 randomly selected songs from top songs in a genre
-M->>C: Microservice sends songs to client in a JSON payload
+C->>M: Client Request via JSON payload
+M->>K: recommended_by_artist(artist) OR recommended_by_track(track)
+K->>M: Send JSON Recommendations
+M->>S: recommended_by_genre(genre)
+S->>M: Send JSON Recommendations
+M->>C: Reply with JSON formatted Recommendations
 
 ```
 
