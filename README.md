@@ -111,7 +111,9 @@ The client will receive data in the following format:
 ```json
 {"recommendations": [
     {"title": "Hey Brother", "artist": "Avicii", "genre": "dance", "popularity": 77}, 
-    {"title": "Roar", "artist": "Katy Perry", "genre": "dance", "popularity": 77}, {"title": "Heart Attack", "artist": "Demi Lovato", "genre": "dance", "popularity": 76}, {"title": "The Way", "artist": "Ariana Grande", "genre": "dance", "popularity": 67}, 
+    {"title": "Roar", "artist": "Katy Perry", "genre": "dance", "popularity": 77}, 
+    {"title": "Heart Attack", "artist": "Demi Lovato", "genre": "dance", "popularity": 76}, 
+    {"title": "The Way", "artist": "Ariana Grande", "genre": "dance", "popularity": 67}, 
     {"title": "Dark Horse", "artist": "Katy Perry", "genre": "dance", "popularity": 78}]}
 ```
 
