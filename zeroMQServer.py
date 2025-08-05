@@ -37,7 +37,7 @@ while True:
         rows = genreQuery.returnByGenre(connection, genre)
         recommendations = genreQuery.formartDict(connection, rows)
         genreQuery.closeConnection(connection)
-    # print(f"The recommendations are {recommendations}")
+    print(f"The recommendations are {recommendations}")
     # recommendations_json = json.dumps(recommendations)
     socket.send_json(recommendations)
 

@@ -62,7 +62,7 @@ request_payload = {
 ```json
 request_payload = {
     "type": "recommend_by_artist",
-    "genre": "artist_name"
+    "artist": "artist_name"
 }
 ```
 
@@ -70,7 +70,7 @@ request_payload = {
 ```json
 request_payload = {
     "type": "recommend_by_track",
-    "genre": "song_name"
+    "track": "song_name"
 }
 ```
 
