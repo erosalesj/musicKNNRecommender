@@ -122,7 +122,7 @@ The client will receive data in the following format:
 ```mermaid
 sequenceDiagram
 participant C as Client
-participant M as MicroseService
+participant M as MicroService
 participant K as KNNRecommender
 participant S as SQLite Database
 C->>M: Client Request via JSON payload
